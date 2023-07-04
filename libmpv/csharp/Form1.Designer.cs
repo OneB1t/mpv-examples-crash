@@ -37,7 +37,7 @@ namespace mpv
             this.textBoxVideoSampleFileName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonPlayPause = new System.Windows.Forms.Button();
-            this.buttonStop = new System.Windows.Forms.Button();
+            this.buttonDispose = new System.Windows.Forms.Button();
             this.buttonLoadVideo = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,16 +74,16 @@ namespace mpv
             this.buttonPlayPause.UseVisualStyleBackColor = true;
             this.buttonPlayPause.Click += new System.EventHandler(this.buttonPlayPause_Click);
             // 
-            // buttonStop
+            // buttonDispose
             // 
-            this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonStop.Location = new System.Drawing.Point(419, 351);
-            this.buttonStop.Name = "buttonStop";
-            this.buttonStop.Size = new System.Drawing.Size(108, 23);
-            this.buttonStop.TabIndex = 8;
-            this.buttonStop.Text = "Stop";
-            this.buttonStop.UseVisualStyleBackColor = true;
-            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            this.buttonDispose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDispose.Location = new System.Drawing.Point(419, 351);
+            this.buttonDispose.Name = "buttonDispose";
+            this.buttonDispose.Size = new System.Drawing.Size(108, 23);
+            this.buttonDispose.TabIndex = 8;
+            this.buttonDispose.Text = "Dispose";
+            this.buttonDispose.UseVisualStyleBackColor = true;
+            this.buttonDispose.Click += new System.EventHandler(this.buttonDispose_Click);
             // 
             // buttonLoadVideo
             // 
@@ -106,7 +106,7 @@ namespace mpv
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 411);
             this.Controls.Add(this.buttonLoadVideo);
-            this.Controls.Add(this.buttonStop);
+            this.Controls.Add(this.buttonDispose);
             this.Controls.Add(this.buttonPlayPause);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxVideoSampleFileName);
@@ -125,7 +125,7 @@ namespace mpv
         private TextBox textBoxVideoSampleFileName;
         private PictureBox pictureBox1;
         private Button buttonPlayPause;
-        private Button buttonStop;
+        private Button buttonDispose;
         private Button buttonLoadVideo;
         private OpenFileDialog openFileDialog1;
     }

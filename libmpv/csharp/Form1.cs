@@ -69,7 +69,7 @@ namespace mpv
 
         private void LoadMpvDynamic()
         {
-            _libMpvDll = LoadLibrary("mpv-1.dll"); // The dll is included in the DEV builds by lachs0r: https://mpv.srsfckn.biz/
+            _libMpvDll = LoadLibrary("libmpv-2.dll"); // The dll is included in the DEV builds by lachs0r: https://mpv.srsfckn.biz/
             _mpvCreate = (MpvCreate)GetDllType(typeof(MpvCreate), "mpv_create");
             _mpvInitialize = (MpvInitialize)GetDllType(typeof(MpvInitialize), "mpv_initialize");
             _mpvTerminateDestroy = (MpvTerminateDestroy)GetDllType(typeof(MpvTerminateDestroy), "mpv_terminate_destroy");
@@ -181,10 +181,12 @@ namespace mpv
                 Pause();
         }
 
-        private void buttonStop_Click(object sender, EventArgs e)
+        private void buttonDispose_Click(object sender, EventArgs e)
         {
-            Pause();
-            SetTime(0);
+            if (_mpvHandle != IntPtr.Zero)
+            { 
+                _mpvTerminateDestroy(_mpvHandle);
+            }
         }
 
         private void buttonLoadVideo_Click(object sender, EventArgs e)
